@@ -19,6 +19,7 @@ interface ReposType {
   description: string;
   svn_url: string;
   homepage: string;
+  topics: string;
 }
 
 export const Project = (): JSX.Element => {
@@ -62,7 +63,8 @@ export const Project = (): JSX.Element => {
             ) : (
               <ProjectStackTech>
                 <Text color="grey2" type="body2">
-                  Not identified
+                  {repository.topics[0].charAt(0).toUpperCase() +
+                    repository.topics[0].slice(1).toLowerCase()}
                 </Text>
               </ProjectStackTech>
             )}
